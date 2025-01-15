@@ -1,7 +1,6 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  color: black;
 }
 
 h1,
@@ -24,4 +23,9 @@ ol {
 img {
   display: block;
   max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
 }
