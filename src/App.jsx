@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import ContactForm from './components/ContactForm/ContactForm';
+// import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import SearchBox from './components/SearchBox/SearchBox';
 
@@ -36,7 +36,7 @@ function App() {
     <>
       <div>
         <h1>Phonebook</h1>
-        <ContactForm />
+        {/* <ContactForm /> */}
         <SearchBox value={searchBox} onFilter={setSearchBox} />
         <ContactList
           dataListContact={filterContactList}
