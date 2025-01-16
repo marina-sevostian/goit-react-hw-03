@@ -40,42 +40,44 @@ const ContactForm = ({ onAdd }) => {
       validationSchema={contactFormSchema}
     >
       <Form className={s.form}>
-        <div className={s.wrapInput}>
-          <label className={s.formLabel} htmlFor={nameFildId}>
-            Name
-          </label>
-          <Field
-            className={s.formInput}
-            type="text"
-            name="name"
-            id={nameFildId}
-            placeholder="Name"
-          />
-          <ErrorMessage
-            className={s.formInputError}
-            name="name"
-            component="span"
-          />
+        <div className={s.wrapForm}>
+          <div className={s.wrapInput}>
+            <label className={s.formLabel} htmlFor={nameFildId}>
+              Name
+            </label>
+            <Field
+              className={s.formInput}
+              type="text"
+              name="name"
+              id={nameFildId}
+              placeholder="Name"
+            />
+            <ErrorMessage
+              className={s.formInputError}
+              name="name"
+              component="span"
+            />
+          </div>
+          <div className={s.wrapInput}>
+            <label className={s.formLabel} htmlFor={numberFildId}>
+              Number
+            </label>
+            <Field
+              className={s.formInput}
+              type="tel"
+              name="number"
+              placeholder="xxx-xx-xx"
+            />
+            <ErrorMessage
+              className={s.formInputError}
+              name="number"
+              component="span"
+            />
+          </div>
+          <button className={s.formBtn} type="submit">
+            Add contact
+          </button>
         </div>
-        <div className={s.wrapInput}>
-          <label className={s.formLabel} htmlFor={numberFildId}>
-            Number
-          </label>
-          <Field
-            className={s.formInput}
-            type="tel"
-            name="number"
-            placeholder="xxx-xx-xx"
-          />
-          <ErrorMessage
-            className={s.formInputError}
-            name="number"
-            component="span"
-          />
-        </div>
-        <button className={s.formBtn} type="submit">
-          Add contact
-        </button>
       </Form>
     </Formik>
   );

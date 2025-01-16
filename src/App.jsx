@@ -41,8 +41,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>
+      <div className="containerPhonebook">
+        <h1 className="title">
           Phonebook <MdContactPhone size="30" />
         </h1>
         <ContactForm onAdd={addContact} />
