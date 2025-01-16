@@ -3,6 +3,7 @@ import './App.css';
 import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import SearchBox from './components/SearchBox/SearchBox';
+import { MdContactPhone } from 'react-icons/md';
 
 function App() {
   const contactData = [
@@ -41,7 +42,9 @@ function App() {
   return (
     <>
       <div>
-        <h1>Phonebook</h1>
+        <h1>
+          Phonebook <MdContactPhone size="30" />
+        </h1>
         <ContactForm onAdd={addContact} />
         <SearchBox value={searchBox} onFilter={setSearchBox} />
         <ContactList
