@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-// import ContactForm from './components/ContactForm/ContactForm';
+import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import SearchBox from './components/SearchBox/SearchBox';
 
@@ -22,6 +22,12 @@ function App() {
     window.localStorage.setItem('saved-contact', JSON.stringify(contacts));
   }, [contacts]);
 
+  const addContact = newContact => {
+    setContacts(prev => {
+      return [...prev, newContact];
+    });
+  };
+
   const deleteContact = contactId => {
     setContacts(prev => {
       return prev.filter(contact => contact.id !== contactId);
@@ -36,7 +42,7 @@ function App() {
     <>
       <div>
         <h1>Phonebook</h1>
-        {/* <ContactForm /> */}
+        <ContactForm onAdd={addContact} />
         <SearchBox value={searchBox} onFilter={setSearchBox} />
         <ContactList
           dataListContact={filterContactList}
